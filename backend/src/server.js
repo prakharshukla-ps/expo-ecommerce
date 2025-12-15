@@ -16,8 +16,7 @@ if (ENV.NODE_ENV === "production") {
 
   app.use(express.static(distPath));
 
-  // app.get("/{*any}", (req, res) => {
-  app.get("*", (req, res) => {
+  app.get("/{*any}", (req, res) => {
     res.sendFile(path.join(distPath, "index.html"));
   });
 }
